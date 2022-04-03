@@ -46,90 +46,84 @@ int main()
     std::cout << NORMALIZE << ". normalize;" << std::endl;
 
     std::cin >> answer;
-    
-    for (int i = 1; i < COUNT_ACTION; ++i) 
+        
+    switch (answer)
     {
-        if (answer == i) 
+        case 1:
         {
-            switch (i)
-            {
-                case 1:
-                {
-                    std::system("cls");
-                    std::cout << "Enter the first term" << std::endl;
-                    Vector vec1 = tmpVector();
-                    std::system("cls");
-                    std::cout << "Enter second term" << std::endl;
-                    Vector vec2 = tmpVector();
-                
-                    Vector result = add(vec1, vec2);
-                
-                    std::system("cls");
-                    std::cout << "Vector (" << vec1.x << ", " << vec1.y << ") plus vector (" << vec2.x << ", " << vec2.y << ")" << std::endl;
-                    std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
-                    break;
-                }
-                case 2:
-                {
-                    std::system("cls");
-                    std::cout << "Enter minuend term" << std::endl;
-                    Vector vec1 = tmpVector();
-                    std::system("cls");
-                    std::cout << "Enter subtrahend term" << std::endl;
-                    Vector vec2 = tmpVector();
-                
-                    Vector result = substract(vec1, vec2);
-                
-                    std::system("cls");
-                    std::cout << "Vector (" << vec1.x << ", " << vec1.y << ") minus vector (" << vec2.x << ", " << vec2.y << ")" << std::endl;
-                    std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
-                    break;
-                }
-                case 3:
-                {
-                    std::system("cls");
-                    std::cout << "Enter vector" << std::endl;
-                    Vector vec = tmpVector();
-                    std::system("cls");
-                    std::cout << "Enter scalar" << std::endl;
-                    double scalar = enterDouble();
-                
-                    Vector result = scale(vec, scalar);
-                
-                    std::system("cls");
-                    std::cout << "Vector (" << vec.x << ", " << vec.y << ") multiply scalar " << scalar << std::endl;
-                    std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
-                    break;
-                }
-                case 4:
-                {
-                    std::system("cls");
-                    std::cout << "Enter vector" << std::endl;
-                    Vector vec = tmpVector();
-                    
-                    double vecLength = length(vec);
-                    
-                    std::system("cls");
-                    std::cout << "Vector length(" << vec.x << ", " << vec.y << ") " << std::endl;
-                    std::cout << "Result: " << vecLength << std::endl << std::endl;
-                    break;
-                }
-                case 5:
-                {
-                    std::system("cls");
-                    std::cout << "Enter vector" << std::endl;
-                    Vector vec = tmpVector();
-                
-                    Vector result = normalize(vec);
-                
-                    std::system("cls");
-                    std::cout << "Normalize vector (" << vec.x << ", " << vec.y << ")" << std::endl;
-                    std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
-                    break;
-                }
-            }
+            std::system("cls");
+            std::cout << "Enter the first term" << std::endl;
+            Vector vec1 = tmpVector();
+            std::system("cls");
+            std::cout << "Enter second term" << std::endl;
+            Vector vec2 = tmpVector();
+        
+            Vector result = add(vec1, vec2);
+        
+            std::system("cls");
+            std::cout << "Vector (" << vec1.x << ", " << vec1.y << ") plus vector (" << vec2.x << ", " << vec2.y << ")" << std::endl;
+            std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
+            break;
         }
-    }
+        case 2:
+        {
+            std::system("cls");
+            std::cout << "Enter minuend term" << std::endl;
+            Vector vec1 = tmpVector();
+            std::system("cls");
+            std::cout << "Enter subtrahend term" << std::endl;
+            Vector vec2 = tmpVector();
+        
+            Vector result = substract(vec1, vec2);
+        
+            std::system("cls");
+            std::cout << "Vector (" << vec1.x << ", " << vec1.y << ") minus vector (" << vec2.x << ", " << vec2.y << ")" << std::endl;
+            std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
+            break;
+        }
+        case 3:
+        {
+            std::system("cls");
+            std::cout << "Enter vector" << std::endl;
+            Vector vec = tmpVector();
+            std::system("cls");
+            std::cout << "Enter scalar" << std::endl;
+            double scalar = enterDouble();
+        
+            Vector result = scale(vec, scalar);
+        
+            std::system("cls");
+            std::cout << "Vector (" << vec.x << ", " << vec.y << ") multiply scalar " << scalar << std::endl;
+            std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
+            break;
+        }
+        case 4:
+        {
+            std::system("cls");
+            std::cout << "Enter vector" << std::endl;
+            Vector vec = tmpVector();
+            
+            double vecLength = length(vec);
+            
+            std::system("cls");
+            std::cout << "Vector length(" << vec.x << ", " << vec.y << ") " << std::endl;
+            std::cout << "Result: " << vecLength << std::endl << std::endl;
+            break;
+        }
+        case 5:
+        {
+            std::system("cls");
+            std::cout << "Enter vector" << std::endl;
+            Vector vec = tmpVector();
+        
+            Vector result = normalize(vec);
+        
+            std::system("cls");
+            std::cout << "Normalize vector (" << vec.x << ", " << vec.y << ")" << std::endl;
+            std::cout << "Result: vector (" << result.x << ", " << result.y << ")" << std::endl << std::endl;
+            break;
+        }
+    }   
 }
 
 Vector tmpVector()
